@@ -65,7 +65,7 @@ header.sticky .logo {
     transform: translate(0,-50%);
 }
 
-                                    /*Nav*/
+                             /*Navbar*/
 
 nav {
     position: relative;
@@ -105,6 +105,7 @@ nav ul li a:hover {
     color: #ff275f;
 }
 
+                      /* Section: général */
 section {
     margin-top: 50px;
     padding: 100px;
@@ -119,26 +120,35 @@ section p {
     font-size: 1.2em;
 }
 
+
+                    /*breakpoint 991px : header*/                    
+
 @media (max-width: 991px) {
+
     section,
     header {
         padding: 40px;
     }
+
     section h2 {
         font-size: 2em;
     }
+
     header.sticky .logo {
         left: 40px;
         top: 40px;
     }
+
     header.sticky .banner {
         opacity: 0;
     }
+
     nav ul {
         display: none;
         opacity: 0;
         visibility: hidden;
     }
+
     nav.active ul {
        position: fixed;
        top: 80px;
@@ -156,7 +166,8 @@ section p {
         font-size: 1.5em;
         padding: 5px 15px;
       
-     }
+    }
+
     header.sticky .toggle {
         position: fixed;
         top: 15px;
@@ -169,6 +180,7 @@ section p {
         background-repeat: no-repeat;
         background-position: center;
     }
+
     header.sticky .toggle.active {
         background: #fff url(images/close.png);
         background-size: 25px;
@@ -177,6 +189,8 @@ section p {
     }
 }
 
+                     /* Section: Scoreurs -carroussel img- */
+
 .caroussel {
     display: flex;
     justify-content: center;
@@ -184,6 +198,14 @@ section p {
     min-height: 100vh;
     background: #000;
 }
+
+.caroussel h2 {
+    color: #fff;
+    font-size: 3.5em;
+    margin-top: -700px;
+    margin-right: -280px;
+}
+
 .box {
     position: relative;
     width: 200px;
@@ -191,15 +213,16 @@ section p {
     transform-style: preserve-3d;
     animation: animate 20s linear infinite;
 }
+
 @keyframes animate {
     0% {
         transform: perspective(1000px) rotateY(0deg);
     }
     100% {
         transform: perspective(1000px) rotateY(360deg);
-    }
-    
+    }  
 }
+
 .box span {
     position: absolute;
     top: 0;
@@ -210,14 +233,63 @@ section p {
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
     -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004) ;
-    
 }
+
 .box span img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    
+    object-fit: cover; 
+}
+
+
+
+/*Footer*/
+
+.footer {
+    background: #231a32;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    color: #fff;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer ul li {
+    list-style: none;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer ul li a img {
+    filter: invert(1);
+    max-width: 20px;
+}
+
+
+@media (max-width: 991px) {
+    .footer {
+        padding: 20px 50px;
+        flex-direction: column-reverse;
+        text-align: center;
+        width: 100%;
+    }
+    .footer ul {
+        margin-bottom: 20px;
+    }
 }
